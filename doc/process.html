@@ -1,0 +1,94 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module process</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>process</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/dmf24/pyscripting/scripting/process.py">/home/dmf24/pyscripting/scripting/process.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;is&nbsp;a&nbsp;library&nbsp;for&nbsp;miscellanous&nbsp;scripting&nbsp;support&nbsp;functions</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="shlex.html">shlex</a><br>
+</td><td width="25%" valign=top><a href="subprocess.html">subprocess</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-dangerous_process"><strong>dangerous_process</strong></a>(cmd_string, error_message<font color="#909090">=''</font>, stdin<font color="#909090">=None</font>, stdout<font color="#909090">=None</font>, stderr<font color="#909090">=None</font>, sudo<font color="#909090">=False</font>)</dt><dd><tt>For&nbsp;processes&nbsp;that&nbsp;should&nbsp;be&nbsp;interactively&nbsp;verified&nbsp;before&nbsp;running.<br>
+If&nbsp;the&nbsp;command&nbsp;uses&nbsp;'sudo'&nbsp;to&nbsp;elevate&nbsp;privileges,&nbsp;set&nbsp;sudo&nbsp;to&nbsp;true&nbsp;and<br>
+'sudo&nbsp;-v'&nbsp;will&nbsp;be&nbsp;called&nbsp;before&nbsp;executing&nbsp;the&nbsp;process.</tt></dd></dl>
+ <dl><dt><a name="-pipestring_process"><strong>pipestring_process</strong></a>(cmd_string, stdin_string<font color="#909090">=''</font>)</dt><dd><tt>Pipe&nbsp;a&nbsp;python&nbsp;string&nbsp;to&nbsp;standard&nbsp;input&nbsp;for&nbsp;cmd_string<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-pipestring_process">pipestring_process</a>('grep&nbsp;2',&nbsp;'1\n2\n3\n')<br>
+(0,&nbsp;'2\n',&nbsp;'')</tt></dd></dl>
+ <dl><dt><a name="-poll_processes"><strong>poll_processes</strong></a>(proclist, wait<font color="#909090">=3</font>, tries<font color="#909090">=3</font>, debug<font color="#909090">=None</font>)</dt><dd><tt>Given&nbsp;a&nbsp;list&nbsp;of&nbsp;process&nbsp;objects,&nbsp;poll&nbsp;each&nbsp;process&nbsp;in&nbsp;the&nbsp;list<br>
+and&nbsp;update&nbsp;return&nbsp;codes.&nbsp;&nbsp;Pull&nbsp;the&nbsp;list&nbsp;'tries'&nbsp;times&nbsp;and&nbsp;wait&nbsp;'wait'<br>
+seconds&nbsp;between&nbsp;tries<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;process_objects=<a href="#-poll_processes">poll_processes</a>(<a href="#-run_processes">run_processes</a>(['echo&nbsp;one',&nbsp;'echo&nbsp;two']))&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&gt;&gt;&gt;&nbsp;[isinstance(obj.returncode,&nbsp;int)&nbsp;for&nbsp;obj&nbsp;in&nbsp;process_objects]<br>
+[True,&nbsp;True]</tt></dd></dl>
+ <dl><dt><a name="-process"><strong>process</strong></a>(cmd_string, stdin<font color="#909090">=None</font>)</dt><dd><tt>Given&nbsp;a&nbsp;string&nbsp;representing&nbsp;a&nbsp;single&nbsp;command,&nbsp;open&nbsp;a&nbsp;process,&nbsp;wait&nbsp;for&nbsp;it&nbsp;to&nbsp;terminate&nbsp;and&nbsp;then<br>
+return&nbsp;standard&nbsp;out&nbsp;and&nbsp;standard&nbsp;in&nbsp;as&nbsp;a&nbsp;tuple<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-process">process</a>("echo&nbsp;1&nbsp;2")<br>
+(0,&nbsp;'1&nbsp;2\n',&nbsp;'')</tt></dd></dl>
+ <dl><dt><a name="-process_results"><strong>process_results</strong></a>(process_object)</dt><dd><tt>Given&nbsp;a&nbsp;process&nbsp;object,&nbsp;wait&nbsp;for&nbsp;it&nbsp;to&nbsp;complete&nbsp;then&nbsp;return&nbsp;a&nbsp;tuple:<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(returncode,&nbsp;stdout,&nbsp;stderr)&nbsp;=&nbsp;<a href="#-process_results">process_results</a>(<a href="#-process_run">process_run</a>('echo&nbsp;my&nbsp;process'))<br>
+&gt;&gt;&gt;&nbsp;returncode<br>
+0<br>
+&gt;&gt;&gt;&nbsp;stdout<br>
+'my&nbsp;process\n'<br>
+&gt;&gt;&gt;&nbsp;stderr<br>
+''</tt></dd></dl>
+ <dl><dt><a name="-process_run"><strong>process_run</strong></a>(cmd_string, stdin<font color="#909090">=None</font>)</dt><dd><tt>Given&nbsp;a&nbsp;string&nbsp;representing&nbsp;a&nbsp;single&nbsp;command,&nbsp;open&nbsp;a&nbsp;process,&nbsp;and&nbsp;return<br>
+the&nbsp;Popen&nbsp;process&nbsp;object.<br>
+<a href="http://docs.python.org/2/library/subprocess.html#popen-objects">http://docs.python.org/2/library/subprocess.html#popen-objects</a><br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;process_object&nbsp;=&nbsp;<a href="#-process_run">process_run</a>('echo&nbsp;test')<br>
+&gt;&gt;&gt;&nbsp;isinstance(process_object,&nbsp;subprocess.Popen)<br>
+True</tt></dd></dl>
+ <dl><dt><a name="-processes"><strong>processes</strong></a>(cmdlist)</dt><dd><tt>Spawns&nbsp;a&nbsp;list&nbsp;of&nbsp;processes&nbsp;in&nbsp;rapid&nbsp;succession,&nbsp;then&nbsp;waits&nbsp;for&nbsp;all&nbsp;of&nbsp;them<br>
+to&nbsp;exit.&nbsp;&nbsp;Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;result&nbsp;tuples&nbsp;[(exitcode,&nbsp;stdin,&nbsp;stderr),&nbsp;...]<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-processes">processes</a>(['echo&nbsp;process&nbsp;1',&nbsp;'echo&nbsp;process&nbsp;2'])<br>
+[(0,&nbsp;'process&nbsp;1\n',&nbsp;''),&nbsp;(0,&nbsp;'process&nbsp;2\n',&nbsp;'')]</tt></dd></dl>
+ <dl><dt><a name="-run_processes"><strong>run_processes</strong></a>(cmdlist)</dt><dd><tt>Run&nbsp;a&nbsp;list&nbsp;of&nbsp;processes&nbsp;and&nbsp;return&nbsp;the&nbsp;list&nbsp;of&nbsp;objects&nbsp;without<br>
+waiting&nbsp;for&nbsp;results<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;process_objects=<a href="#-run_processes">run_processes</a>(['echo&nbsp;one',&nbsp;'echo&nbsp;two'])<br>
+&gt;&gt;&gt;&nbsp;[isinstance(obj,&nbsp;subprocess.Popen)&nbsp;for&nbsp;obj&nbsp;in&nbsp;process_objects]<br>
+[True,&nbsp;True]</tt></dd></dl>
+ <dl><dt><a name="-typical_process"><strong>typical_process</strong></a>(cmd_string, error_message<font color="#909090">=''</font>, stdin<font color="#909090">=None</font>, stdout<font color="#909090">=None</font>, stderr<font color="#909090">=None</font>)</dt><dd><tt>Call&nbsp;a&nbsp;process,&nbsp;write&nbsp;the&nbsp;results&nbsp;to&nbsp;stdout&nbsp;and&nbsp;stderr,&nbsp;and&nbsp;for&nbsp;nonzero<br>
+return&nbsp;codes,&nbsp;print&nbsp;a&nbsp;custom&nbsp;error&nbsp;message&nbsp;before&nbsp;calling&nbsp;sys.exit.<br>
+&nbsp;<br>
+To&nbsp;write&nbsp;to&nbsp;files&nbsp;other&nbsp;than&nbsp;standard&nbsp;out&nbsp;and&nbsp;standard&nbsp;error,&nbsp;set<br>
+the&nbsp;stdout&nbsp;and&nbsp;stderr&nbsp;parameters&nbsp;to&nbsp;file&nbsp;objects.<br>
+&nbsp;<br>
+Return&nbsp;(exitcode,&nbsp;stdout,&nbsp;stderr)&nbsp;for&nbsp;zero&nbsp;return&nbsp;codes.</tt></dd></dl>
+ <dl><dt><a name="-validate_sudo"><strong>validate_sudo</strong></a>()</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['validate_sudo', 'dangerous_process', 'pipestring_process', 'poll_processes', 'process', 'process_results', 'process_run', 'processes', 'run_processes', 'subprocess', 'typical_process']</td></tr></table>
+</body></html>

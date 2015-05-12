@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module files</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>files</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/dmf24/pyscripting/scripting/files.py">/home/dmf24/pyscripting/scripting/files.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;This&nbsp;is&nbsp;a&nbsp;library&nbsp;for&nbsp;miscellanous&nbsp;support&nbsp;functions&nbsp;used&nbsp;by<br>
+#&nbsp;python&nbsp;scripts&nbsp;in&nbsp;the&nbsp;HMS&nbsp;chef&nbsp;deployment.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ConfigParser.html">ConfigParser</a><br>
+<a href="grp.html">grp</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="pwd.html">pwd</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-appendlist2file"><strong>appendlist2file</strong></a>(filename, lst)</dt><dd><tt>Appends&nbsp;lst&nbsp;to&nbsp;file&nbsp;specified&nbsp;by&nbsp;filename</tt></dd></dl>
+ <dl><dt><a name="-chunks"><strong>chunks</strong></a>(lst, n)</dt><dd><tt>split&nbsp;a&nbsp;list&nbsp;into&nbsp;size&nbsp;n&nbsp;chunks</tt></dd></dl>
+ <dl><dt><a name="-dirs_and_files"><strong>dirs_and_files</strong></a>(rootdir)</dt></dl>
+ <dl><dt><a name="-file2list"><strong>file2list</strong></a>(filename)</dt><dd><tt><a href="#-file2list">file2list</a>(filename)<br>
+Reads&nbsp;a&nbsp;file&nbsp;into&nbsp;a&nbsp;list&nbsp;and&nbsp;returns&nbsp;it.<br>
+&gt;&gt;&gt;&nbsp;isinstance(<a href="#-file2list">file2list</a>(os.path.abspath(sys.argv[0])),&nbsp;list)<br>
+True</tt></dd></dl>
+ <dl><dt><a name="-fileownership"><strong>fileownership</strong></a>(filename, convert<font color="#909090">=True</font>)</dt><dd><tt>Return&nbsp;a&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;(owner,&nbsp;group)&nbsp;for&nbsp;a&nbsp;path.<br>
+Set&nbsp;convert=False&nbsp;to&nbsp;return&nbsp;(uid,&nbsp;gid)&nbsp;instead.</tt></dd></dl>
+ <dl><dt><a name="-finddirs"><strong>finddirs</strong></a>(rootdir)</dt></dl>
+ <dl><dt><a name="-findfiles"><strong>findfiles</strong></a>(rootdir)</dt></dl>
+ <dl><dt><a name="-list2file"><strong>list2file</strong></a>(filename, lst, rwabit<font color="#909090">='w'</font>)</dt><dd><tt><a href="#-list2file">list2file</a>(filename,&nbsp;lst,&nbsp;rwabit='w')<br>
+Writes&nbsp;each&nbsp;item&nbsp;of&nbsp;lst&nbsp;to&nbsp;a&nbsp;line&nbsp;in&nbsp;a&nbsp;file&nbsp;specified&nbsp;by&nbsp;filename</tt></dd></dl>
+ <dl><dt><a name="-listconfig"><strong>listconfig</strong></a>(parser_object)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;with&nbsp;all&nbsp;of&nbsp;the&nbsp;data&nbsp;from&nbsp;a&nbsp;configfile&nbsp;parser&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-readconfig"><strong>readconfig</strong></a>(filename, magic<font color="#909090">=False</font>)</dt><dd><tt>Parse&nbsp;a&nbsp;config&nbsp;file&nbsp;and&nbsp;return&nbsp;a&nbsp;parsing&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-readconfig2dict"><strong>readconfig2dict</strong></a>(filename)</dt></dl>
+ <dl><dt><a name="-string2spool"><strong>string2spool</strong></a>(input_string)</dt><dd><tt>Takes&nbsp;a&nbsp;string&nbsp;as&nbsp;an&nbsp;argument&nbsp;and&nbsp;returns&nbsp;an&nbsp;open&nbsp;file&nbsp;handle&nbsp;with&nbsp;the<br>
+contents&nbsp;of&nbsp;the&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-stripfile2list"><strong>stripfile2list</strong></a>(filename)</dt><dd><tt>Reads&nbsp;an&nbsp;entire&nbsp;file&nbsp;into&nbsp;a&nbsp;list&nbsp;and&nbsp;strips</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['appendlist2file', 'chunks', 'dirs_and_files', 'file2list', 'fileownership', 'finddirs', 'findfiles', 'list2file', 'listconfig', 'os', 'pwd', 'readconfig', 'readconfig2dict', 'string', 'string2spool', 'stripfile2list']</td></tr></table>
+</body></html>
