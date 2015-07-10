@@ -3,5 +3,5 @@ __author__='Doug Feldmann'
 
 from process import *
 from files import *
-
-
+import quickmenu
+import getkey
