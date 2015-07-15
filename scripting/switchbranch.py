@@ -4,6 +4,9 @@ import sys
 pri=sys.stdout.write
 err=sys.stderr.write
 
+up=list('qwertyuiop')
+down=list('asdfghjklzxcvbnm,.')
+
 def barename(txt):
     if txt.startswith('* '):
         return txt[2:]
@@ -13,7 +16,7 @@ def barename(txt):
 def switchbranch():
     gbresults=process('git branch')
     brlist=[x.strip() for x in gbresults[1].split('\n') if x.strip() != ''] + ['NONE']
-    choice=getchoice(brlist)
+    choice=getchoice(brlist, up=up, down=down)
     
     if choice != 'NONE':
         results=process("git checkout %s" % barename(choice))
