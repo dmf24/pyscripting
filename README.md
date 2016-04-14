@@ -15,7 +15,7 @@ The other tool in this repository that I wound up using a lot is [switchbranch](
 
 ## switchbranch
 
-This is an interactive tool to switch between branches in a git repository using a mini-menu.  Sometimes I find it more convenient (and fun to use) than tab-complete.  Running it gives you a menu that looks like the following, allowing you to use keys to move the cursor to the desired branch then hit enter to switch to it.
+This is an interactive tool to switch between branches in a git repository using a mini-menu.  Sometimes I find it more convenient (and fun to use) than tab-complete.  Running it gives you a menu that looks like the following, allowing you to use keys to move the cursor to the desired branch then hit enter to switch to it.  The asterisk indicates the current branch.
 
 ```
 > branch1
