@@ -3,6 +3,14 @@ Scripting Helper Library
 
 This is a collection of functions I use frequently when writing scripts for system adminstration.  Far and away the function I use most often is `process`, which accepts a shell command and returns a tuple containing (return code, standard out, standard error).
 
+```
+>>> from scripting import process
+>>> process('uname')
+(0, 'Linux\n', '')
+>>> process('/bin/false')
+(1, '', '')
+```
+
 The other tool in this repository that I wound up using a lot is [switchbranch](https://github.com/dmf24/pyscripting/blob/master/scripting/switchbranch.py).  I've included an sample installation guide below for anyone who wants to try it out.  
 
 ## switchbranch
