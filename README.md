@@ -20,7 +20,7 @@ Warning: this is an extremely simple program.  It does not use curses to update 
 
 #### Setup guide
 
-This is best used as an example, the steps are simple and you should modify them based on what you want.
+This is best used as an example, the steps are simple and you should modify them based on what you want.  Someday I will may try to create a legitimate python package that can be installed with pip.  Until then do something like this.
 
 Create a fresh python virtualenv:
 
