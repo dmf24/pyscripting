@@ -49,7 +49,7 @@ Symlink the scripting library from the virtualenv's site-packages:
 ln -s pyscripting/scripting venv01/lib/python2.7/site-packages/scripting $BASEDIR/pyscripting/scripting
 ```
 
-Replace `python2.6` with your python version.  You might be able to get the string using this:
+Replace `python2.7` with your python version.  You might be able to get the string using this:
 ```
 VSTRING=$(venv01/bin/python -c "import sys; sys.stdout.write(set([x.split('/')[-2] for x in sys.path if x.endswith('site-packages')]).pop())")
 ln -s $BASEDIR/pyscripting/scripting venv01/lib/$VSTRING/site-packages/scripting
