@@ -6,3 +6,4 @@ from files import *
 import quickmenu
 import getkey
 import dt
+import sysctl
